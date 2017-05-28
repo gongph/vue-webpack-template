@@ -1,7 +1,7 @@
 {
-  "name": "f7-vue",
+  "name": "vue-webpack-template",
   "version": "1.0.0",
-  "description": "f7-vue",
+  "description": "Simple spa template for vue + webpack + es6",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
