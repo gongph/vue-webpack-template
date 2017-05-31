@@ -1,8 +1,8 @@
-const path = require('path')
-const webpack = require('webpack')
-const eslint = require('eslint')
+var path = require('path')
+var webpack = require('webpack')
+var eslint = require('eslint')
 
-const NODE_ENV = process.env.NODE_ENV || 'development'
+var NODE_ENV = process.env.NODE_ENV || 'development'
 
 module.exports = {
   entry: {
@@ -58,4 +58,21 @@ module.exports = {
       filename: 'vendor.js'
     })
   ]
+}
+
+if (NODE_ENV === 'production') {
+  module.exports.output.filename = 'bundle.[name].min.js'
+  module.exports.devtool = '#source-map'
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ])
 }
