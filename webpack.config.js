@@ -26,9 +26,9 @@ module.exports = {
       	enforce: 'pre',
       	use: [{
       		loader: 'eslint-loader',
-      		options: {
-      			formatter: require('eslint-friendly-formatter')
-      		}
+          options: {
+      	    formatter: require('eslint-friendly-formatter')
+          }
       	}]
       },
       {
