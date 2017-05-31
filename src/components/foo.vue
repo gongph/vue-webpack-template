@@ -1,3 +1,3 @@
 <template>
- <p> Foo! </p>
+ <p>Foo: {{ $route.params.id }}</p>
 </template>
