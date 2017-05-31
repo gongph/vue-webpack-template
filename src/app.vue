@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <button @click="toggle"> {{ msg }} </button>
+    <router-link to="/foo">Foo</router-link>
+    <router-link to="/bar">Bar</router-link>
+
+    <router-view></router-view>
+    
   </div>
 </template>
 
