@@ -6,7 +6,8 @@ const NODE_ENV = process.env.NODE_ENV || 'development'
 
 module.exports = {
   entry: {
-    app: path.resolve('./app.js')
+    app: path.resolve('./app.js'),
+    vendor: ['vue']
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -50,5 +51,11 @@ module.exports = {
       	exclude: /node_modules/
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.js'
+    })
+  ]
 }
