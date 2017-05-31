@@ -7,7 +7,7 @@ var NODE_ENV = process.env.NODE_ENV || 'development'
 module.exports = {
   entry: {
     app: path.resolve('./app.js'),
-    vendor: ['vue']
+    vendor: ['vue', 'vue-router']
   },
   output: {
     path: path.join(__dirname, 'dist'),
