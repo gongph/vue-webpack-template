@@ -25,7 +25,7 @@ module.exports = {
       	test: /\.vue$/,
       	enforce: 'pre',
       	use: [{
-      		loader: 'eslint-loader',
+          loader: 'eslint-loader',
           options: {
       	    formatter: require('eslint-friendly-formatter')
           }
